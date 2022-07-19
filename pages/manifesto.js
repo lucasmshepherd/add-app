@@ -1,9 +1,9 @@
 import Interface from '../components/interface.js'
 
-export default function Home() {
+export default function Manifesto() {
   return (
     <>
-      <Interface page="home" />
+      <Interface page="manifesto" />
     </>
   )
 }

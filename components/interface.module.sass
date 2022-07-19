@@ -1,0 +1,52 @@
+@import '/styles/variables.sass'
+
+.ui
+  width: 100%
+  height: 100%
+  position: relative
+  &[data-layout="default"]
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: stretch
+    align-content: stretch
+    [data-row="primary"]
+      flex: 1 0 auto
+    [data-row="secondary"]
+      flex: 0 0 300px
+      max-height: 360px
+    .pane
+      flex: 1 0 auto
+    .side
+      flex: 0 0 $sidebar_width
+
+.pane
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: stretch
+  align-content: stretch
+
+.row
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: stretch
+  align-content: stretch
+
+  & > *
+    flex: 1 0 auto
+
+  &[data-row="small"]
+    flex: 0 0 130px
+  &[data-row="medium"]
+    flex: 0 0 200px
+  &[data-row="fill"]
+    flex: 1 0 auto
+
+.side
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: stretch
+  align-content: stretch

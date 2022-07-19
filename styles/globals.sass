@@ -1,0 +1,56 @@
+@import "variables"
+  
+html,
+body
+  padding: 0
+  margin: 0
+  width: 100%
+  height: 100%
+
+a
+  color: inherit
+  text-decoration: none
+
+*
+  box-sizing: border-box
+
+.container
+  width: 100%
+  max-width: 1440px
+  margin-left: auto
+  margin-right: auto
+  
+main
+  height: calc(100vh - 130px)
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: stretch
+  align-content: stretch
+
+  & > *
+    flex: 1 0 auto
+
+// theming
+
+body
+  font-family: $font_content
+  background: $color_dark url('/assets/images/anarchy-fund-background-optimized.jpg') no-repeat 50% 50%
+  background-size: cover
+  color: $color_light
+
+.monitor-effect-overlay
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  pointer-events: none
+  background: linear-gradient(90deg, rgba(220,0,0,0.25), rgba(0,220,0,0.25), rgba(0,0,220,0.25)), linear-gradient(0deg, rgba(220,0,0,0.25), rgba(0,220,0,0.25), rgba(0,0,220,0.25))
+  background-size: 4px 2px, 4px 2px
+  box-shadow: inset 0 0 60px rgba(150,255,150,0.6)
+  opacity: 0.125
+  animation: tube-flicker 0.05s linear infinite
+@keyframes tube-flicker
+  to
+    filter: brightness(130%)
