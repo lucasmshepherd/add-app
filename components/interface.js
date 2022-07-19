@@ -4,6 +4,8 @@ import Files from './files.js'
 import Terminal from './terminal.js'
 import Directory from './directory.js'
 import Report from './report.js'
+import Social from './social.js'
+import AudioVisualizer from './audio-visualizer.js'
 import UserInterface, { Pane, PaneRow, Sidebar } from './user-interface.js'
 //import styles from './interface.module.sass'
 
@@ -39,7 +41,9 @@ export default function Interface(props) {
           </PaneRow>
           {/* Audio */}
           <PaneRow name="small">
-            <Widget type="audio" title="freq_v_" icon="arc" />
+            <Widget type="audio" title="freq_v_" icon="arc">
+              <AudioVisualizer />
+            </Widget>
           </PaneRow>
           {/* Report */}
           <PaneRow name="fill">
@@ -49,7 +53,9 @@ export default function Interface(props) {
           </PaneRow>
           {/* Social */}
           <PaneRow name="medium">
-            <Widget type="social" title="social_" icon="globe" />
+            <Widget type="social" title="social_" icon="globe">
+              <Social />
+            </Widget>
           </PaneRow>
         </Sidebar>
       </UserInterface>
