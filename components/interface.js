@@ -102,7 +102,7 @@ export default function Interface(props) {
             {/* Audio */}
             <PaneRow name="small">
               <Widget type="audio" title="freq_v_" icon="arc">
-                <AudioVisualizer />
+                <Visualizer />
               </Widget>
             </PaneRow>
             {/* Report */}
