@@ -29,15 +29,6 @@ export default function Visualizer() {
     setAudioAnimationFrame(null);
   }
 
-  function handleToggle() {
-    console.log('tooggle');
-    if (audioIsPlaying) {
-      handlePause();
-    } else {
-      handlePlay();
-    }
-  }
-
   function handleAudioStart() {
     // display settings
     let repeat_char = '/';
