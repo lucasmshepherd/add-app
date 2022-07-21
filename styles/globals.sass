@@ -59,3 +59,17 @@ li[data-current="false"]
   .icon-arrow
     display: none
 
+button.switcher-item
+  background: $color_4
+  font-family: $font_scifi
+  cursor: pointer
+  &.switcher-active-item
+    background: #fff!important
+  &:hover,
+  &:active
+    background: $color_3
+
+.switcher
+  position: absolute
+  top: 6px
+  right: 10px

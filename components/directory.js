@@ -11,7 +11,6 @@ export default function Directory(props) {
   const dispatch = useDispatch();
   const connected = useSelector((state) => state.users.connected);
   const widgets = props.widgets
-  console.log(widgets)
 
   function loginUserNow() {
     dispatch(loginUser());
@@ -30,11 +29,11 @@ export default function Directory(props) {
       <ul id="menu" className={styles.menu}>
         <li data-current={ widgets == "home" ? 'true' : 'false' }><Link className="anchor" href="./"><a>{folder}<span>root</span>{arrow}</a></Link></li>
         <li data-hide={connected}><a onClick={loginUserNow}><span>connect_wallet</span></a></li>
-        <li><a href="https://www.uniswap.org" rel="noreferrer" target="_blank"><span>purchase_add_on_uniswap</span></a></li>
+        <li><a href="https://uniswap.org/" rel="noreferrer" target="_blank"><span>purchase_add_on_uniswap</span></a></li>
         <li data-connected={connected} data-current={ widgets == "dapp" ? 'true' : 'false' }><Link className="anchor" href="/dapp"><a>{lock}<span>anarchy_dao</span>{arrow}</a></Link></li>
         <li data-connected={connected} data-current={ widgets == "mint" ? 'true' : 'false' }><Link className="anchor" href="/mint"><a>{lock}<span>mint_nft</span>{arrow}</a></Link></li>
-        <li data-current={ widgets == "menifesto" ? 'true' : 'false' }><Link className="anchor" href="/manifesto"><a>{folder}<span>manifesto</span>{arrow}</a></Link></li>
-        <li data-connected={connected} data-current={ widgets == "freedom" ? 'true' : 'false' }><a href="#">{lock}<span>fr33d0m.mp4</span>{arrow}</a></li>
+        <li data-current={ widgets == "manifesto" ? 'true' : 'false' }><Link className="anchor" href="/manifesto"><a>{folder}<span>manifesto</span>{arrow}</a></Link></li>
+        <li data-connected={connected} data-current={ widgets == "freedom" ? 'true' : 'false' }><Link className="anchor" href="/freedom"><a>{lock}<span>fr33d0m.mp4</span>{arrow}</a></Link></li>
       </ul>
     </>
   )

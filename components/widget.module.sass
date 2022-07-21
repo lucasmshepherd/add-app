@@ -16,7 +16,7 @@
       color: $color_3
       text-shadow: $glow_text
   &[data-widget="source"]
-    flex: 0 0 500px
+    flex: 0 0 50%
   &[data-widget="mint"]
     flex: 1 0 200px
   &[data-widget="social"]
@@ -67,6 +67,7 @@
     box-shadow: 0 0 10px transparentize(#fee500,.66), 0 0 20px transparentize(#fee500,0)
 
 .scroll
+  position: relative
   width: 100%
   padding: 30px
   min-height: 100%
@@ -90,15 +91,31 @@
   &::-webkit-scrollbar-thumb:hover
     background: $color_2
 
+  &[data-feed="mint"]
+    background: url('/assets/images/nftbg.jpg') no-repeat 50% 50%
+    background-size: cover
+
   &[data-feed="social"]
     overflow: hidden
     background: url('/assets/images/flatgridbg.jpg') no-repeat 50% 50%
     background-size: cover
+    min-height: 160px
+    .scroll
+      position: absolute
+      top: 0
+      left: 0
   &[data-feed="news"]
     .scroll
       position: absolute
       top: 0
       left: 0
+  &[data-feed="dapp"]
+    .scroll
+      padding: 0
+      display: flex
+      flex-flow: row nowrap
+      justify-content: center
+      align-items: center
   &[data-feed="report"]
     min-height: 70px
     .scroll
@@ -110,11 +127,19 @@
     .scroll
       padding-top: 20px
       padding-bottom: 20px
+  &[data-feed="video"]
+    .scroll
+      padding: 0
   &[data-feed="terminal"]
     .scroll
       position: absolute
       bottom: 0
       left: 0
+      display: flex
+      flex-flow: column nowrap
+      justify-content: flex-end
+      align-items: flex-start
+      align-content: stretch
   
   &[data-feed="source"]
     .scroll
@@ -156,12 +181,12 @@
 .files
   display: flex
   flex-flow: row wrap
-  justify-content: space-between
+  justify-content: space-evenly
   align-items: stretch
   align-content: stretch
 
   & > *
-    flex: 0 0 46%
+    flex: 0 0 200px
     margin-bottom: 30px
 
 .folder
@@ -171,6 +196,13 @@
   font-size: $font_size_mono_sm * .8
   text-align: center
   cursor: pointer
+
+  &[data-connected="false"][data-video="live"]
+    display: none
+
+  &[data-connected="true"][data-video="preview"]
+    display: none
+
 
   &:hover,
   &:active
