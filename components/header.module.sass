@@ -1,4 +1,16 @@
 @import '/styles/variables.sass'
+
+.header
+  display: block
+
+  &[data-connected="true"]
+    .balance
+      background-image: url('/assets/images/add-logo-highlight-01.svg')
+    .icon
+      span:nth-child(1)
+        display: none!important
+      span:nth-child(2)
+        display: inline-block!important
   
 .bar
   display: block
@@ -41,9 +53,15 @@
   width: 48px
   text-align: center
   transform: translate(-50%, -50%)
+  cursor: pointer
+  span:nth-child(2) 
+    display: none!important
+  .header[data-connected="true"] &
+    cursor: default
 
 .balance
   background: url('/assets/images/add-logo.svg') no-repeat 100% 50%
+  background-size: 18px
   display: inline-block
   font-family: $font_scifi
   text-transform: uppercase
@@ -52,4 +70,5 @@
   height: 44px
   line-height: 44px
   padding-right: 24px
-  
+  &[data-connected="true"]
+    cursor: default

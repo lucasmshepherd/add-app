@@ -3,7 +3,7 @@ import { wrapper } from '../store/store'
 import Interface from '../components/interface.js'
 
 const Index = (props) => {
-  return <Interface page="Home" />
+  return <Interface layout="default" widgets="home" />
 }
 
 export const getStaticProps = wrapper.getStaticProps((store) => () => {

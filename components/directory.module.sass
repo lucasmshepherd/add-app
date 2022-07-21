@@ -25,9 +25,6 @@
           fill: $color_dark
     &[data-hide="true"]
       display: none
-    &[data-connected="true"]
-      svg
-        display: none
     &[data-connected="false"]
       opacity: .5
       a
@@ -38,7 +35,7 @@
           background-color: transparent
           svg
             fill: #fff
-    &.current
+    &[data-current="true"]
       color: $color_4
       svg
         fill: $color_4
