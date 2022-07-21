@@ -30,6 +30,7 @@ export default function Visualizer() {
   }
 
   function handleToggle() {
+    console.log('tooggle');
     if (audioIsPlaying) {
       handlePause();
     } else {
@@ -50,9 +51,9 @@ export default function Visualizer() {
     let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     // different audio nodes
     let analyser = audioCtx.createAnalyser();
-    analyser.minDecibels = -90;
+    analyser.minDecibels = -70;
     analyser.maxDecibels = -3;
-    analyser.smoothingTimeConstant = 0.85;
+    analyser.smoothingTimeConstant = 0.8;
     let distortion = audioCtx.createWaveShaper();
     let gainNode = audioCtx.createGain();
     let biquadFilter = audioCtx.createBiquadFilter();
@@ -68,31 +69,32 @@ export default function Visualizer() {
     visualize();
     
     function visualize() {
-      analyser.fftSize = 256;
+      analyser.fftSize = 128;
       let bufferLength = analyser.frequencyBinCount;
       let dataArray = new Uint8Array(bufferLength);
+      let dataArray2 = new Uint8Array([dataArray[3],dataArray[16],dataArray[27]]);
 
       //Update the UI
       const draw = function () {
         setAudioAnimationFrame(requestAnimationFrame(draw));
-        analyser.getByteFrequencyData(dataArray);
-        let ascii_visualizer = document.querySelector('.ascii-visualizer>pre');
+        analyser.getByteFrequencyData(dataArray2);
+        let ascii_visualizer = document.querySelector('.visualizer---row-container');
 
         if (ascii_visualizer) {
-          ascii_visualizer.textContent = '';
+          ascii_visualizer.innerHTML = '';
 
           // where the magic happens
-          dataArray.forEach((level, index) => {
-            let levelFloor = Math.floor(level / 10);
+          dataArray2.forEach((level, index) => {
+            let levelFloor = Math.floor(level / 14); // lower number equals great amplitude
             if (levelFloor > char_across) { levelFloor = char_across; } // ensure it doesn't exceed our limit
             
-            let REPEAT_CHARS = repeat_char.repeat(levelFloor);
-            if (REPEAT_CHARS < 0) { REPEAT_CHARS = 0; }
+            let repeatChars = repeat_char.repeat(levelFloor);
+            if (repeatChars < 0) { repeatChars = 0; }
             
             const REMAINING_CHARS = char_across - levelFloor;
-            let FILLER_CHARS = filler_char.repeat(REMAINING_CHARS);
+            let fillerChars = filler_char.repeat(REMAINING_CHARS);
             
-            ascii_visualizer.textContent += `${REPEAT_CHARS}${FILLER_CHARS}\n`
+            ascii_visualizer.innerHTML += `<div class="visualizer--row"><span style="color: #8dc927;">${repeatChars}</span><span style="color:#767676">${fillerChars}</span></div>`
           });
         }
       };
@@ -113,13 +115,19 @@ export default function Visualizer() {
   return (
     <div id="visualizer" className={styles.visualizer}>
       { !audioIsLoading &&
-        <div>
-          <header>
-              <p className={styles.solicitor} onClick={handleToggle}>{ audioIsPlaying ? '⏸︎' : '⏵︎'}{ !audioIsPlaying && <span />}</p>
-          </header>
-          <main className="ascii-visualizer">
-            <pre></pre>
-          </main>
+        <div className="visualizer--click-target" style={{cursor: 'pointer'}}  onClick={ audioIsPlaying ? handlePause : handlePlay}>
+          <div className="visualizer---row-container">
+            {
+              [...Array(3),]
+              .map((value, index) => {
+                return (
+                  <div className='visualizer--row' key={index}>
+                    <span style={{ color:'#767676'}}>--------------------</span>
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
       }
     </div>

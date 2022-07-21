@@ -1,33 +1,16 @@
 .visualizer
-  height: 300px
   width: 100%
   overflow: hidden
 
   *
-    color: limegreen
-    font-family: monospace, serif
-    font-size: 1rem
-  h1
-    font-size: 1rem
+    font-size: 0.8rem
+    color: #8dc927
 
-  .ascii-visualizer
+  .visualizer--click-target
+    cursor: pointer
+
+  .visualizer---row
+    pointer-events: none
+
+  .visualizer---row-container
     font-size: 14px
-    &>pre
-      margin: 0
-      width: 138px
-      height: 38px
-      overflow: hidden
-      font-size: 10px
-
-.solicitor
-  cursor: pointer
-  margin: 0
-  &>span
-    &:after
-      content: "▓"
-      opacity: 1
-      animation: blink 1.2s infinite
-
-@keyframes blink
-  to
-    opacity: 0
