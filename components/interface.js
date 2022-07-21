@@ -52,7 +52,7 @@ export default function Interface(props) {
             </Widget>
           </PaneRow>
           {/* Social */}
-          <PaneRow name="medium">
+          <PaneRow>
             <Widget type="social" title="social_" icon="globe">
               <Social />
             </Widget>

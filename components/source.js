@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './widget.module.sass'
-
+ 
 export default class Source extends React.Component {
 
   componentDidMount () {

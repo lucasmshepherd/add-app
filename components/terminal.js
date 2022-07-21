@@ -1,7 +1,7 @@
 import React from 'react';
-import $ from 'jquery';
+//import $ from 'jquery';
 
-import styles from './widget.module.sass'
+//import styles from './widget.module.sass'
 
 export default class Terminal extends React.Component {
   componentDidMount () {

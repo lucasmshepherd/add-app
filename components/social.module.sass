@@ -1,0 +1,41 @@
+@import '/styles/variables.sass'
+
+.wrapper
+  perspective: 600px
+
+.social
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: center
+  align-content: stretch
+  transform: rotateX(40deg) rotateY(335deg) rotateZ(30deg) perspective(700px)
+  transform-origin: center center
+  margin-top: -30px
+  margin-left: -50px
+  & > *
+    height: 136px
+    flex: 1 0 auto
+    margin-right: -30px
+    position: relative
+    transition: transform 0.2s
+    &:hover,
+    &:active
+      transform: translate(10px, 5px)
+      span:nth-child(2)
+        transform: translate(0, 0)
+    span:nth-child(2)
+      position: absolute!important
+      top: 0!important
+      left: 0!important
+      transform: translate(10px, 5px)
+      transition: transform 0.2s
+    &:last-child
+      margin-right: 0
+    &:nth-child(2n+1)
+      padding-bottom: 36px
+    &:nth-child(2n+2)
+      padding-top: 36px
+      span:nth-child(2)
+        top: auto!important
+        bottom: 0!important

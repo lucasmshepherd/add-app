@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Container from './container.js'
-import Balance from './header-balance.js'
+import Balance from './balance.js'
 import Logo from '../public/assets/images/logo.svg'
 import LogoIcon from '../public/assets/images/logo-icon.svg'
 
