@@ -15,14 +15,17 @@
       display: block
       padding: 0 5px
       margin: 2px 0
-      line-height: 26px
+      line-height: 22px
+      cursor: pointer
       &:hover,
       &:active
         color: $color_dark
         background-color: $color_5
         svg
           fill: $color_dark
-    &.disabled
+    &[data-hide="true"]
+      display: none
+    &[data-connected="false"]
       opacity: .5
       a
         cursor: default
@@ -32,7 +35,7 @@
           background-color: transparent
           svg
             fill: #fff
-    &.current
+    &[data-current="true"]
       color: $color_4
       svg
         fill: $color_4

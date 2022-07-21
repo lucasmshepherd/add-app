@@ -3,6 +3,7 @@
 .ui
   width: 100%
   height: 100%
+  max-width: 100%
   position: relative
   &[data-layout="default"]
     display: flex
@@ -16,9 +17,10 @@
       flex: 0 0 300px
       max-height: 360px
     .pane
-      flex: 1 0 auto
+      flex: 1 1 auto
     .side
       flex: 0 0 $sidebar_width
+      
 
 .pane
   display: flex

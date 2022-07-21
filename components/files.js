@@ -8,10 +8,10 @@ export default function Files() {
   return (
     <>
       <div className={styles.files}>
-        {/*<div className={styles.folder}>
+        <div className={styles.folder}>
           <Image layout="responsive" src={Icon1} priority="true" alt="folder" />
-          <style>{`
-            .thumb {
+          <style jsx>{`
+            .fthumb {
               position: absolute;
               width: 80%;
               height: 80%;
@@ -21,9 +21,9 @@ export default function Files() {
               background-size: cover;
             }
           `}</style>
-          <span className="thumb"></span>
+          <div className="fthumb"/>
           <div className={styles.flabel}>fr33d0m</div>
-          </div>*/}
+          </div>
         <div className={styles.folder}>
           <Image layout="responsive" src={Icon1} priority="true" alt="folder" />
           <div className={styles.fcontent}>
@@ -43,13 +43,6 @@ export default function Files() {
           <div className={styles.fcontent}>
             <p>Coming Q4 2022</p>
             <span>cha05</span>
-          </div>
-        </div>
-        <div className={styles.folder}>
-          <Image layout="responsive" src={Icon1} priority="true" alt="folder" />
-          <div className={styles.fcontent}>
-            <p>Coming ??? </p>
-            <span>???</span>
           </div>
         </div>
         <div className={styles.folder}>

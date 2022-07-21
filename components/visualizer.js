@@ -101,8 +101,6 @@ export default function Visualizer() {
     setAudioIsLoading(false);
   }, [audioFile])
 
-
-
   return (
     <div id="visualizer" className={styles.visualizer}>
       { !audioIsLoading &&
