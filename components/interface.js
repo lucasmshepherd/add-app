@@ -9,6 +9,8 @@ import Visualizer from './visualizer.js'
 import MintNft from './mint-nft.js'
 import News from './news.js'
 import Page from './page.js'
+import Static from './static.js'
+import EnterTransition from './enter-transition.js'
 import UserInterface, { Pane, PaneRow, Sidebar } from './user-interface.js'
 //import styles from './interface.module.sass'
 
@@ -226,7 +228,7 @@ export default function Interface(props) {
           <Pane>
             <PaneRow name="primary">
               {/* Mint NFTs */}
-              <Widget type={widgets} title="anarchy_nft_t_1_" icon="triangles">
+              <Widget type={widgets} title="dapp_" icon="triangles">
                 <Chart data="add price" />
               </Widget>
             </PaneRow>
@@ -254,6 +256,50 @@ export default function Interface(props) {
             <PaneRow name="fill">
               <Widget type="report" title="num_rep_" icon="triangles">
                 <Report />
+              </Widget>
+            </PaneRow>
+          </Sidebar>
+        </UserInterface>
+      </>
+    )
+  }
+
+  else if (widgets == "enter") {
+    return (
+      <> 
+        <UserInterface layout={layout}>
+          <Pane>
+            <PaneRow name="primary">
+              {/* Mint NFTs */}
+              <Widget type={widgets} title="accessing_dapp_" icon="triangles">
+                <EnterTransition />
+              </Widget>
+            </PaneRow>
+          </Pane>
+          <Sidebar>
+            {/* Menu */}
+            <PaneRow>
+              <Widget type="menu" title="dir_nav_" icon="triangles">
+              <Directory widgets={widgets} />
+                <Static />
+              </Widget>
+            </PaneRow>
+            {/* Audio */}
+            <PaneRow name="small">
+              <Widget type="audio" title="freq_v_" icon="arc">
+                <Visualizer />
+              </Widget>
+            </PaneRow>
+            {/* Report */}
+            <PaneRow name="fill">
+              <Widget type="report" title="num_rep_" icon="triangles">
+                <Static />
+              </Widget>
+            </PaneRow>
+            {/* Social */}
+            <PaneRow>
+              <Widget type="social" title="social_" icon="globe">
+                <Static />
               </Widget>
             </PaneRow>
           </Sidebar>

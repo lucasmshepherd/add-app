@@ -39,7 +39,7 @@ body
   background-size: cover
   color: $color_light
 
-.monitor-effect-overlay
+.monitor-effect-overlayy
   position: fixed
   top: 0
   left: 0
@@ -73,3 +73,36 @@ button.switcher-item
   position: absolute
   top: 6px
   right: 10px
+
+.glitch-bg-image
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: -5
+  background: linear-gradient( to bottom,#000,#000 40%,#111 50%,#111 )
+  background-size: 100% 4px
+  animation: gradientMove 200ms ease infinite
+  filter: brightness(300%) sepia(200%) opacity(.2)
+  //mix-blend-mode: difference
+  //mix-blend-mode: darken
+
+@keyframes gradientMove
+  0%
+    background-size: 100% 4px
+  50%
+    background-size: 100% 2px
+  100%
+    background-size: 100% 4px
+
+canvas#canvas2
+  position: fixed
+  display: block
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: -11

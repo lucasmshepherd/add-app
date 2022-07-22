@@ -11,7 +11,7 @@ export default function Widget(props) {
   const connected = useSelector((state) => state.users.connected);
   const type = props.type
   const label = props.title
-  const icon = props.icon
+  //const icon = props.icon
   let noticeText = ""
 
   if (type == "source") {

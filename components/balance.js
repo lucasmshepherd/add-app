@@ -8,6 +8,8 @@ export default function Balance() {
   const dispatch = useDispatch()
   const connected = useSelector((state) => state.users.connected)
 
+  
+
   function loginUserNow() {
     dispatch(loginUser());
   }
