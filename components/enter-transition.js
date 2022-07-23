@@ -8,7 +8,7 @@ import $ from 'jquery';
 export default class EnterTransition extends React.Component {
   componentDidMount () {
 
-    function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
+    /*function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
       if (arguments.length === 2) {
         x = y = 0;
         w = ctx.canvas.width;
@@ -214,7 +214,7 @@ export default class EnterTransition extends React.Component {
       //   cancelAnimationFrame(MY_REQ)
       //   return document.querySelector('canvas').style.display = 'none'
       // }, 2000)
-    })();
+    })();*/
 
   }
 
@@ -222,7 +222,7 @@ export default class EnterTransition extends React.Component {
     return (
       <> 
         {/*<div id="container">*/}
-          <canvas id="canvas2"></canvas>
+          {/*<canvas id="canvas2"></canvas>*/}
           
           <div id="terminal-container">
 

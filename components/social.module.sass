@@ -19,8 +19,13 @@
     margin-right: -30px
     position: relative
     transition: transform 0.2s
-    &:hover,
-    &:active
+    opacity: .9
+    &:hover
+      transform: translate(2px, 1px)
+      opacity: 1
+      span:nth-child(2)
+        transform: translate(8px, 4px)
+    &:active 
       transform: translate(10px, 5px)
       span:nth-child(2)
         transform: translate(0, 0)

@@ -10,7 +10,7 @@ export default class Static extends React.Component {
 
     var app = {
       init: function() {
-        this.canvas = document.getElementById('canvas');
+        this.canvas = document.getElementById('canvas3');
         this.ctx = this.canvas.getContext('2d');
         this.canvas.width = $(window).width();
         this.canvas.height = $(window).height();
@@ -61,11 +61,7 @@ export default class Static extends React.Component {
         }
       }
     };
-    
-    $(window).on('resize', function() {
-      app.canvas.width = $(window).width();
-      app.canvas.height = $(window).height();
-    });
+  
     
     app.init();
 
@@ -75,7 +71,7 @@ export default class Static extends React.Component {
     return (
       <> 
         {/*<div id="container">*/}
-          <canvas className="staticer">
+          <canvas id="canvas3" className="staticer">
 
           </canvas>
         {/*</div>*/}

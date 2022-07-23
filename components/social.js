@@ -10,7 +10,7 @@ import IconBG from '../public/assets/images/shape-bg.svg'
 
 export default class Social extends React.Component {
   componentDidMount() {
-    $('[seffect="true"]').on('mouseenter', function () {     
+    $('[seffect="true"]').on('mousedown', function () {     
       playMechGlitch();
     })
     function playMechGlitch () {
