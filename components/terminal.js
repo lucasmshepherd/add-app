@@ -25,7 +25,7 @@ export default class Terminal extends React.Component {
         text[lineY++] = ["> owl\n"];
         //printConsole(text);
         text[lineY++] = ["executing bgchckr.exe "];
-        setInterval(function() { text[lineY++] = ["executing bgchckr.exe 2"];  }, 500);
+        setTimeout(function() { text[lineY++] = ["executing bgchckr.exe 2"];  }, 500);
         //setTimeout(printConsole(text), 300);
     }
     
